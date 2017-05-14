@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.user_preferences import UserPreferences
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.user_preferences import UserPreferences
 
 
 class TestUserPreferences(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestUserPreferences(unittest.TestCase):
         """
         Test UserPreferences
         """
-        model = swagger_client.models.user_preferences.UserPreferences()
+        model = bitmex_client.models.user_preferences.UserPreferences()
 
 
 if __name__ == '__main__':

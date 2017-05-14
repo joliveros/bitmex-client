@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.apis.funding_api import FundingApi
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.apis.funding_api import FundingApi
 
 
 class TestFundingApi(unittest.TestCase):
     """ FundingApi unit test stubs """
 
     def setUp(self):
-        self.api = swagger_client.apis.funding_api.FundingApi()
+        self.api = bitmex_client.apis.funding_api.FundingApi()
 
     def tearDown(self):
         pass

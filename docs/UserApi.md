@@ -1,4 +1,4 @@
-# swagger_client.UserApi
+# bitmex_client.UserApi
 
 All URIs are relative to *https://localhost/api/v1*
 
@@ -36,12 +36,12 @@ Cancel a withdrawal.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 token = 'token_example' # str | 
 
 try: 
@@ -84,12 +84,12 @@ If the code is valid, responds with the referral code's discount (e.g. `0.1` for
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 referral_code = 'referral_code_example' # str |  (optional)
 
 try: 
@@ -130,12 +130,12 @@ Confirm your email address with a token.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 token = 'token_example' # str | 
 
 try: 
@@ -176,12 +176,12 @@ Confirm two-factor auth for this account. If using a Yubikey, simply send a toke
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 token = 'token_example' # str | Token from your selected TFA type.
 type = 'type_example' # str | Two-factor auth type. Supported types: 'GA' (Google Authenticator), 'Yubikey' (optional)
 
@@ -224,12 +224,12 @@ Confirm a withdrawal.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 token = 'token_example' # str | 
 
 try: 
@@ -270,12 +270,12 @@ Disable two-factor auth for this account.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 token = 'token_example' # str | Token from your selected TFA type.
 type = 'type_example' # str | Two-factor auth type. Supported types: 'GA' (Google Authenticator) (optional)
 
@@ -318,12 +318,12 @@ Get your user model.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 
 try: 
     # Get your user model.
@@ -360,12 +360,12 @@ Get your current affiliate/referral status.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 
 try: 
     # Get your current affiliate/referral status.
@@ -402,12 +402,12 @@ Get your account's commission status.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 
 try: 
     # Get your account's commission status.
@@ -444,12 +444,12 @@ Get a deposit address.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 currency = 'XBt' # str |  (optional) (default to XBt)
 
 try: 
@@ -490,12 +490,12 @@ Get your account's margin status. Send a currency of \"all\" to receive an array
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 currency = 'XBt' # str |  (optional) (default to XBt)
 
 try: 
@@ -536,12 +536,12 @@ Get your current wallet information.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 currency = 'XBt' # str |  (optional) (default to XBt)
 
 try: 
@@ -582,12 +582,12 @@ Get a history of all of your wallet transactions (deposits, withdrawals, PNL).
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 currency = 'XBt' # str |  (optional) (default to XBt)
 
 try: 
@@ -628,12 +628,12 @@ Get a summary of all of your wallet transactions (deposits, withdrawals, PNL).
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 currency = 'XBt' # str |  (optional) (default to XBt)
 
 try: 
@@ -674,12 +674,12 @@ Log out of BitMEX.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 
 try: 
     # Log out of BitMEX.
@@ -715,12 +715,12 @@ Log all systems out of BitMEX. This will revoke all of your account's access tok
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 
 try: 
     # Log all systems out of BitMEX. This will revoke all of your account's access tokens, logging you out on all devices.
@@ -759,12 +759,12 @@ This is changed based on network conditions to ensure timely withdrawals. During
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 currency = 'XBt' # str |  (optional) (default to XBt)
 
 try: 
@@ -807,12 +807,12 @@ Use /confirmEnableTFA directly for Yubikeys. This fails if TFA is already enable
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 type = 'type_example' # str | Two-factor auth type. Supported types: 'GA' (Google Authenticator) (optional)
 
 try: 
@@ -855,12 +855,12 @@ This will send a confirmation email to the email address on record, unless reque
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 currency = 'XBt' # str | Currency you're withdrawing. Options: `XBt` (default to XBt)
 amount = 3.4 # float | Amount of withdrawal currency.
 address = 'address_example' # str | Destination Address.
@@ -909,12 +909,12 @@ Save user preferences.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 prefs = 'prefs_example' # str | 
 overwrite = false # bool | If true, will overwrite all existing preferences. (optional) (default to false)
 
@@ -957,12 +957,12 @@ Update your password, name, and other attributes.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = bitmex_client.UserApi()
 firstname = 'firstname_example' # str |  (optional)
 lastname = 'lastname_example' # str |  (optional)
 old_password = 'old_password_example' # str |  (optional)

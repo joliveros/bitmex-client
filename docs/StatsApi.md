@@ -1,4 +1,4 @@
-# swagger_client.StatsApi
+# bitmex_client.StatsApi
 
 All URIs are relative to *https://localhost/api/v1*
 
@@ -17,12 +17,12 @@ Get exchange-wide and per-series turnover and volume statistics.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.StatsApi()
+api_instance = bitmex_client.StatsApi()
 
 try: 
     # Get exchange-wide and per-series turnover and volume statistics.
@@ -59,12 +59,12 @@ Get historical exchange-wide and per-series turnover and volume statistics.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.StatsApi()
+api_instance = bitmex_client.StatsApi()
 
 try: 
     # Get historical exchange-wide and per-series turnover and volume statistics.

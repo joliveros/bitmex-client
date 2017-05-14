@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.api_key import APIKey
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.api_key import APIKey
 
 
 class TestAPIKey(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestAPIKey(unittest.TestCase):
         """
         Test APIKey
         """
-        model = swagger_client.models.api_key.APIKey()
+        model = bitmex_client.models.api_key.APIKey()
 
 
 if __name__ == '__main__':

@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.transaction import Transaction
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.transaction import Transaction
 
 
 class TestTransaction(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestTransaction(unittest.TestCase):
         """
         Test Transaction
         """
-        model = swagger_client.models.transaction.Transaction()
+        model = bitmex_client.models.transaction.Transaction()
 
 
 if __name__ == '__main__':

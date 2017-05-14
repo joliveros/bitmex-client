@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.order import Order
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.order import Order
 
 
 class TestOrder(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestOrder(unittest.TestCase):
         """
         Test Order
         """
-        model = swagger_client.models.order.Order()
+        model = bitmex_client.models.order.Order()
 
 
 if __name__ == '__main__':

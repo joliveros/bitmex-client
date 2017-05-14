@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.execution import Execution
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.execution import Execution
 
 
 class TestExecution(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestExecution(unittest.TestCase):
         """
         Test Execution
         """
-        model = swagger_client.models.execution.Execution()
+        model = bitmex_client.models.execution.Execution()
 
 
 if __name__ == '__main__':

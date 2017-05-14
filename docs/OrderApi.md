@@ -1,4 +1,4 @@
-# swagger_client.OrderApi
+# bitmex_client.OrderApi
 
 All URIs are relative to *https://localhost/api/v1*
 
@@ -26,12 +26,12 @@ Send an `orderID` or `origClOrdID` to identify the order you wish to amend.  Bot
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = bitmex_client.OrderApi()
 order_id = 'order_id_example' # str | Order ID (optional)
 orig_cl_ord_id = 'orig_cl_ord_id_example' # str | Client Order ID. See POST /order. (optional)
 cl_ord_id = 'cl_ord_id_example' # str | Optional new Client Order ID, requires `origClOrdID`. (optional)
@@ -94,12 +94,12 @@ Similar to POST /amend, but with multiple orders. `application/json` only. Ratel
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = bitmex_client.OrderApi()
 orders = 'orders_example' # str | An array of orders. (optional)
 
 try: 
@@ -142,12 +142,12 @@ Either an orderID or a clOrdID must be provided.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = bitmex_client.OrderApi()
 order_id = 'order_id_example' # str | Order ID(s). (optional)
 cl_ord_id = 'cl_ord_id_example' # str | Client Order ID(s). See POST /order. (optional)
 text = 'text_example' # str | Optional cancellation annotation. e.g. 'Spread Exceeded'. (optional)
@@ -192,12 +192,12 @@ Cancels all of your orders.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = bitmex_client.OrderApi()
 symbol = 'symbol_example' # str | Optional symbol. If provided, only cancels orders for that symbol. (optional)
 filter = 'filter_example' # str | Optional filter for cancellation. Use to only cancel some orders, e.g. `{\"side\": \"Buy\"}`. (optional)
 text = 'text_example' # str | Optional cancellation annotation. e.g. 'Spread Exceeded' (optional)
@@ -244,12 +244,12 @@ Useful as a dead-man's switch to ensure your orders are canceled in case of an o
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = bitmex_client.OrderApi()
 timeout = 1.2 # float | Timeout in ms. Set to 0 to cancel this timer. 
 
 try: 
@@ -292,12 +292,12 @@ If no `price` is specified, a market order will be submitted to close the whole 
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = bitmex_client.OrderApi()
 symbol = 'symbol_example' # str | Symbol of position to close.
 price = 1.2 # float | Optional limit price. (optional)
 
@@ -342,12 +342,12 @@ To get open orders only, send {\"open\": true} in the filter param.  See <a href
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = bitmex_client.OrderApi()
 symbol = 'symbol_example' # str | Instrument symbol. Send a bare series (e.g. XBU) to get data for the nearest expiring contract in that series.  You can also send a timeframe, e.g. `XBU:monthly`. Timeframes are `daily`, `weekly`, `monthly`, `quarterly`, and `biquarterly`. (optional)
 filter = 'filter_example' # str | Generic table filter. Send JSON key/value pairs, such as `{\"key\": \"value\"}`. You can key on individual fields, and do more advanced querying on timestamps. See the [Timestamp Docs](https://www.bitmex.com/app/restAPI#timestamp-filters) for more details. (optional)
 columns = 'columns_example' # str | Array of column names to fetch. If omitted, will return all columns.  Note that this method will always return item keys, even when not specified, so you may receive more columns that you expect. (optional)
@@ -404,12 +404,12 @@ Create a new order.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = bitmex_client.OrderApi()
 symbol = 'symbol_example' # str | Instrument symbol. e.g. 'XBTUSD'.
 side = 'side_example' # str | Order side. Valid options: Buy, Sell. Defaults to 'Buy' unless `orderQty` or `simpleOrderQty` is negative. (optional)
 simple_order_qty = 1.2 # float | Order quantity in units of the underlying instrument (i.e. Bitcoin). (optional)
@@ -488,12 +488,12 @@ This endpoint is used for placing bulk orders. Valid order types are Market, Lim
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = bitmex_client.OrderApi()
 orders = 'orders_example' # str | An array of orders. (optional)
 
 try: 

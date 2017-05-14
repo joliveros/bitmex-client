@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.quote import Quote
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.quote import Quote
 
 
 class TestQuote(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestQuote(unittest.TestCase):
         """
         Test Quote
         """
-        model = swagger_client.models.quote.Quote()
+        model = bitmex_client.models.quote.Quote()
 
 
 if __name__ == '__main__':

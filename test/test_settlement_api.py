@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.apis.settlement_api import SettlementApi
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.apis.settlement_api import SettlementApi
 
 
 class TestSettlementApi(unittest.TestCase):
     """ SettlementApi unit test stubs """
 
     def setUp(self):
-        self.api = swagger_client.apis.settlement_api.SettlementApi()
+        self.api = bitmex_client.apis.settlement_api.SettlementApi()
 
     def tearDown(self):
         pass

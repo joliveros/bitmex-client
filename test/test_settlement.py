@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.settlement import Settlement
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.settlement import Settlement
 
 
 class TestSettlement(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestSettlement(unittest.TestCase):
         """
         Test Settlement
         """
-        model = swagger_client.models.settlement.Settlement()
+        model = bitmex_client.models.settlement.Settlement()
 
 
 if __name__ == '__main__':

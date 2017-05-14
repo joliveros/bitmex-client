@@ -1,4 +1,4 @@
-# swagger_client.AnnouncementApi
+# bitmex_client.AnnouncementApi
 
 All URIs are relative to *https://localhost/api/v1*
 
@@ -17,12 +17,12 @@ Get site announcements.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AnnouncementApi()
+api_instance = bitmex_client.AnnouncementApi()
 columns = 'columns_example' # str | Array of column names to fetch. If omitted, will return all columns. (optional)
 
 try: 
@@ -63,12 +63,12 @@ Get urgent (banner) announcements.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AnnouncementApi()
+api_instance = bitmex_client.AnnouncementApi()
 
 try: 
     # Get urgent (banner) announcements.

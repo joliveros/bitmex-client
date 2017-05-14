@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.access_token import AccessToken
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.access_token import AccessToken
 
 
 class TestAccessToken(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestAccessToken(unittest.TestCase):
         """
         Test AccessToken
         """
-        model = swagger_client.models.access_token.AccessToken()
+        model = bitmex_client.models.access_token.AccessToken()
 
 
 if __name__ == '__main__':

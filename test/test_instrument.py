@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.instrument import Instrument
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.instrument import Instrument
 
 
 class TestInstrument(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestInstrument(unittest.TestCase):
         """
         Test Instrument
         """
-        model = swagger_client.models.instrument.Instrument()
+        model = bitmex_client.models.instrument.Instrument()
 
 
 if __name__ == '__main__':

@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.apis.quote_api import QuoteApi
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.apis.quote_api import QuoteApi
 
 
 class TestQuoteApi(unittest.TestCase):
     """ QuoteApi unit test stubs """
 
     def setUp(self):
-        self.api = swagger_client.apis.quote_api.QuoteApi()
+        self.api = bitmex_client.apis.quote_api.QuoteApi()
 
     def tearDown(self):
         pass

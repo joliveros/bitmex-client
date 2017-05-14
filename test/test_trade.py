@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.trade import Trade
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.trade import Trade
 
 
 class TestTrade(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestTrade(unittest.TestCase):
         """
         Test Trade
         """
-        model = swagger_client.models.trade.Trade()
+        model = bitmex_client.models.trade.Trade()
 
 
 if __name__ == '__main__':

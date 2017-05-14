@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.error_error import ErrorError
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.error_error import ErrorError
 
 
 class TestErrorError(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestErrorError(unittest.TestCase):
         """
         Test ErrorError
         """
-        model = swagger_client.models.error_error.ErrorError()
+        model = bitmex_client.models.error_error.ErrorError()
 
 
 if __name__ == '__main__':

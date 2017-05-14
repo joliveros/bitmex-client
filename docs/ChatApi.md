@@ -1,4 +1,4 @@
-# swagger_client.ChatApi
+# bitmex_client.ChatApi
 
 All URIs are relative to *https://localhost/api/v1*
 
@@ -19,12 +19,12 @@ Get chat messages.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ChatApi()
+api_instance = bitmex_client.ChatApi()
 count = 100 # float | Number of results to fetch. (optional) (default to 100)
 start = 0 # float | Starting point for results. (optional) (default to 0)
 reverse = true # bool | If true, will sort results newest first. (optional) (default to true)
@@ -71,12 +71,12 @@ Get available channels.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ChatApi()
+api_instance = bitmex_client.ChatApi()
 
 try: 
     # Get available channels.
@@ -115,12 +115,12 @@ Returns an array with browser users in the first position and API users (bots) i
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ChatApi()
+api_instance = bitmex_client.ChatApi()
 
 try: 
     # Get connected users.
@@ -157,12 +157,12 @@ Send a chat message.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ChatApi()
+api_instance = bitmex_client.ChatApi()
 message = 'message_example' # str | 
 channel_id = 1 # float | Channel to post to. Default 1 (English). (optional) (default to 1)
 

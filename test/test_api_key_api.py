@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.apis.api_key_api import APIKeyApi
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.apis.api_key_api import APIKeyApi
 
 
 class TestAPIKeyApi(unittest.TestCase):
     """ APIKeyApi unit test stubs """
 
     def setUp(self):
-        self.api = swagger_client.apis.api_key_api.APIKeyApi()
+        self.api = bitmex_client.apis.api_key_api.APIKeyApi()
 
     def tearDown(self):
         pass

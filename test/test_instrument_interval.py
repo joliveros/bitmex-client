@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.instrument_interval import InstrumentInterval
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.instrument_interval import InstrumentInterval
 
 
 class TestInstrumentInterval(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestInstrumentInterval(unittest.TestCase):
         """
         Test InstrumentInterval
         """
-        model = swagger_client.models.instrument_interval.InstrumentInterval()
+        model = bitmex_client.models.instrument_interval.InstrumentInterval()
 
 
 if __name__ == '__main__':

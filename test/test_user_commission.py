@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.user_commission import UserCommission
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.user_commission import UserCommission
 
 
 class TestUserCommission(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestUserCommission(unittest.TestCase):
         """
         Test UserCommission
         """
-        model = swagger_client.models.user_commission.UserCommission()
+        model = bitmex_client.models.user_commission.UserCommission()
 
 
 if __name__ == '__main__':

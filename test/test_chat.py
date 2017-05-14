@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.chat import Chat
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.chat import Chat
 
 
 class TestChat(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestChat(unittest.TestCase):
         """
         Test Chat
         """
-        model = swagger_client.models.chat.Chat()
+        model = bitmex_client.models.chat.Chat()
 
 
 if __name__ == '__main__':

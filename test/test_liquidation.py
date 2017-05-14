@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.liquidation import Liquidation
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.liquidation import Liquidation
 
 
 class TestLiquidation(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestLiquidation(unittest.TestCase):
         """
         Test Liquidation
         """
-        model = swagger_client.models.liquidation.Liquidation()
+        model = bitmex_client.models.liquidation.Liquidation()
 
 
 if __name__ == '__main__':

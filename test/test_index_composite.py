@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.index_composite import IndexComposite
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.index_composite import IndexComposite
 
 
 class TestIndexComposite(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestIndexComposite(unittest.TestCase):
         """
         Test IndexComposite
         """
-        model = swagger_client.models.index_composite.IndexComposite()
+        model = bitmex_client.models.index_composite.IndexComposite()
 
 
 if __name__ == '__main__':

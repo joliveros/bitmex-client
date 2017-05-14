@@ -1,4 +1,4 @@
-# swagger_client.PositionApi
+# bitmex_client.PositionApi
 
 All URIs are relative to *https://localhost/api/v1*
 
@@ -22,12 +22,12 @@ See <a href=\"http://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_AP_6580.html\"
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PositionApi()
+api_instance = bitmex_client.PositionApi()
 filter = 'filter_example' # str | Table filter. For example, send {\"symbol\": \"XBTUSD\"}. (optional)
 columns = 'columns_example' # str | Which columns to fetch. For example, send [\"columnName\"]. (optional)
 count = 3.4 # float | Number of rows to fetch. (optional)
@@ -74,12 +74,12 @@ Users can switch isolate margin per-position. This function allows switching mar
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PositionApi()
+api_instance = bitmex_client.PositionApi()
 symbol = 'symbol_example' # str | Position symbol to isolate.
 enabled = true # bool | True for isolated margin, false for cross margin. (optional) (default to true)
 
@@ -124,12 +124,12 @@ When margin is isolated on a position, use this function to add or remove margin
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PositionApi()
+api_instance = bitmex_client.PositionApi()
 symbol = 'symbol_example' # str | Symbol of position to isolate.
 amount = 3.4 # float | Amount to transfer, in Satoshis. May be negative.
 
@@ -174,12 +174,12 @@ Users can choose an isolated leverage. This will automatically enable isolated m
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PositionApi()
+api_instance = bitmex_client.PositionApi()
 symbol = 'symbol_example' # str | Symbol of position to adjust.
 leverage = 1.2 # float | Leverage value. Send a number between 0.01 and 100 to enable isolated margin with a fixed leverage. Send 0 to enable cross margin.
 
@@ -224,12 +224,12 @@ Risk Limits limit the size of positions you can trade at various margin levels. 
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PositionApi()
+api_instance = bitmex_client.PositionApi()
 symbol = 'symbol_example' # str | Symbol of position to isolate.
 risk_limit = 3.4 # float | New Risk Limit, in Satoshis.
 

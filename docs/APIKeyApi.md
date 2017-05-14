@@ -1,4 +1,4 @@
-# swagger_client.APIKeyApi
+# bitmex_client.APIKeyApi
 
 All URIs are relative to *https://localhost/api/v1*
 
@@ -20,12 +20,12 @@ Disable an API Key.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.APIKeyApi()
+api_instance = bitmex_client.APIKeyApi()
 api_key_id = 'api_key_id_example' # str | API Key ID (public component).
 
 try: 
@@ -66,12 +66,12 @@ Enable an API Key.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.APIKeyApi()
+api_instance = bitmex_client.APIKeyApi()
 api_key_id = 'api_key_id_example' # str | API Key ID (public component).
 
 try: 
@@ -112,12 +112,12 @@ Get your API Keys.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.APIKeyApi()
+api_instance = bitmex_client.APIKeyApi()
 reverse = false # bool | If true, will sort results newest first. (optional) (default to false)
 
 try: 
@@ -160,12 +160,12 @@ API Keys can also be created via [this Python script](https://github.com/BitMEX/
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.APIKeyApi()
+api_instance = bitmex_client.APIKeyApi()
 name = 'name_example' # str | Key name. This name is for reference only. (optional)
 cidr = 'cidr_example' # str | CIDR block to restrict this key to. To restrict to a single address, append \"/32\", e.g. 207.39.29.22/32. Leave blank or set to 0.0.0.0/0 to allow all IPs. Only one block may be set. <a href=\"http://software77.net/cidr-101.html\">More on CIDR blocks</a> (optional)
 permissions = 'permissions_example' # str | Key Permissions. All keys can read margin and position data. Additional permissions must be added. Available: [\"order\", \"withdraw\"]. (optional)
@@ -214,12 +214,12 @@ Remove an API Key.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.APIKeyApi()
+api_instance = bitmex_client.APIKeyApi()
 api_key_id = 'api_key_id_example' # str | API Key ID (public component).
 
 try: 

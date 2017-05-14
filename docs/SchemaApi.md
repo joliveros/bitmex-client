@@ -1,4 +1,4 @@
-# swagger_client.SchemaApi
+# bitmex_client.SchemaApi
 
 All URIs are relative to *https://localhost/api/v1*
 
@@ -17,12 +17,12 @@ Get model schemata for data objects returned by this API.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SchemaApi()
+api_instance = bitmex_client.SchemaApi()
 model = 'model_example' # str | Optional model filter. If omitted, will return all models. (optional)
 
 try: 
@@ -63,12 +63,12 @@ Returns help text & subject list for websocket usage.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SchemaApi()
+api_instance = bitmex_client.SchemaApi()
 
 try: 
     # Returns help text & subject list for websocket usage.

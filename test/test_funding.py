@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.funding import Funding
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.funding import Funding
 
 
 class TestFunding(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestFunding(unittest.TestCase):
         """
         Test Funding
         """
-        model = swagger_client.models.funding.Funding()
+        model = bitmex_client.models.funding.Funding()
 
 
 if __name__ == '__main__':

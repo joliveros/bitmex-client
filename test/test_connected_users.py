@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.connected_users import ConnectedUsers
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.connected_users import ConnectedUsers
 
 
 class TestConnectedUsers(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestConnectedUsers(unittest.TestCase):
         """
         Test ConnectedUsers
         """
-        model = swagger_client.models.connected_users.ConnectedUsers()
+        model = bitmex_client.models.connected_users.ConnectedUsers()
 
 
 if __name__ == '__main__':

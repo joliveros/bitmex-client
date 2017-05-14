@@ -1,4 +1,4 @@
-# swagger_client.InstrumentApi
+# bitmex_client.InstrumentApi
 
 All URIs are relative to *https://localhost/api/v1*
 
@@ -23,12 +23,12 @@ This returns all instruments and indices, including those that have settled or a
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.InstrumentApi()
+api_instance = bitmex_client.InstrumentApi()
 symbol = 'symbol_example' # str | Instrument symbol. Send a bare series (e.g. XBU) to get data for the nearest expiring contract in that series.  You can also send a timeframe, e.g. `XBU:monthly`. Timeframes are `daily`, `weekly`, `monthly`, `quarterly`, and `biquarterly`. (optional)
 filter = 'filter_example' # str | Generic table filter. Send JSON key/value pairs, such as `{\"key\": \"value\"}`. You can key on individual fields, and do more advanced querying on timestamps. See the [Timestamp Docs](https://www.bitmex.com/app/restAPI#timestamp-filters) for more details. (optional)
 columns = 'columns_example' # str | Array of column names to fetch. If omitted, will return all columns.  Note that this method will always return item keys, even when not specified, so you may receive more columns that you expect. (optional)
@@ -83,12 +83,12 @@ Get all active instruments and instruments that have expired in <24hrs.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.InstrumentApi()
+api_instance = bitmex_client.InstrumentApi()
 
 try: 
     # Get all active instruments and instruments that have expired in <24hrs.
@@ -125,12 +125,12 @@ Helper method. Gets all active instruments and all indices. This is a join of th
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.InstrumentApi()
+api_instance = bitmex_client.InstrumentApi()
 
 try: 
     # Helper method. Gets all active instruments and all indices. This is a join of the result of /indices and /active.
@@ -169,12 +169,12 @@ This endpoint is useful for determining which pairs are live. It returns two arr
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.InstrumentApi()
+api_instance = bitmex_client.InstrumentApi()
 
 try: 
     # Return all active contract series and interval pairs.
@@ -213,12 +213,12 @@ Composite indices are built from multiple external price sources.  Use this endp
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.InstrumentApi()
+api_instance = bitmex_client.InstrumentApi()
 symbol = '.XBT' # str | The composite index symbol. (optional) (default to .XBT)
 filter = 'filter_example' # str | Generic table filter. Send JSON key/value pairs, such as `{\"key\": \"value\"}`. You can key on individual fields, and do more advanced querying on timestamps. See the [Timestamp Docs](https://www.bitmex.com/app/restAPI#timestamp-filters) for more details. (optional)
 columns = 'columns_example' # str | Array of column names to fetch. If omitted, will return all columns.  Note that this method will always return item keys, even when not specified, so you may receive more columns that you expect. (optional)
@@ -273,12 +273,12 @@ Get all price indices.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.InstrumentApi()
+api_instance = bitmex_client.InstrumentApi()
 
 try: 
     # Get all price indices.

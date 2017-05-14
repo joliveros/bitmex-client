@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.order_book import OrderBook
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.order_book import OrderBook
 
 
 class TestOrderBook(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestOrderBook(unittest.TestCase):
         """
         Test OrderBook
         """
-        model = swagger_client.models.order_book.OrderBook()
+        model = bitmex_client.models.order_book.OrderBook()
 
 
 if __name__ == '__main__':

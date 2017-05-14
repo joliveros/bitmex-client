@@ -1,4 +1,4 @@
-# swagger_client.LeaderboardApi
+# bitmex_client.LeaderboardApi
 
 All URIs are relative to *https://localhost/api/v1*
 
@@ -16,12 +16,12 @@ Get current leaderboard.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.LeaderboardApi()
+api_instance = bitmex_client.LeaderboardApi()
 method = 'notional' # str | Ranking type. Options: \"notional\", \"ROE\" (optional) (default to notional)
 
 try: 

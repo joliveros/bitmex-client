@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.notification import Notification
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.notification import Notification
 
 
 class TestNotification(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestNotification(unittest.TestCase):
         """
         Test Notification
         """
-        model = swagger_client.models.notification.Notification()
+        model = bitmex_client.models.notification.Notification()
 
 
 if __name__ == '__main__':

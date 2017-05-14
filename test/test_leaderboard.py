@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.leaderboard import Leaderboard
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.leaderboard import Leaderboard
 
 
 class TestLeaderboard(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestLeaderboard(unittest.TestCase):
         """
         Test Leaderboard
         """
-        model = swagger_client.models.leaderboard.Leaderboard()
+        model = bitmex_client.models.leaderboard.Leaderboard()
 
 
 if __name__ == '__main__':

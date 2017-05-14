@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.stats_history import StatsHistory
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.stats_history import StatsHistory
 
 
 class TestStatsHistory(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestStatsHistory(unittest.TestCase):
         """
         Test StatsHistory
         """
-        model = swagger_client.models.stats_history.StatsHistory()
+        model = bitmex_client.models.stats_history.StatsHistory()
 
 
 if __name__ == '__main__':

@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.position import Position
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.position import Position
 
 
 class TestPosition(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestPosition(unittest.TestCase):
         """
         Test Position
         """
-        model = swagger_client.models.position.Position()
+        model = bitmex_client.models.position.Position()
 
 
 if __name__ == '__main__':

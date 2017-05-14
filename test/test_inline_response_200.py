@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.inline_response_200 import InlineResponse200
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.inline_response_200 import InlineResponse200
 
 
 class TestInlineResponse200(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestInlineResponse200(unittest.TestCase):
         """
         Test InlineResponse200
         """
-        model = swagger_client.models.inline_response_200.InlineResponse200()
+        model = bitmex_client.models.inline_response_200.InlineResponse200()
 
 
 if __name__ == '__main__':

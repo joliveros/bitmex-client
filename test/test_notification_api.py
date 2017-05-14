@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.apis.notification_api import NotificationApi
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.apis.notification_api import NotificationApi
 
 
 class TestNotificationApi(unittest.TestCase):
     """ NotificationApi unit test stubs """
 
     def setUp(self):
-        self.api = swagger_client.apis.notification_api.NotificationApi()
+        self.api = bitmex_client.apis.notification_api.NotificationApi()
 
     def tearDown(self):
         pass

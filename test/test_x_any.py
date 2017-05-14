@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.x_any import XAny
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.x_any import XAny
 
 
 class TestXAny(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestXAny(unittest.TestCase):
         """
         Test XAny
         """
-        model = swagger_client.models.x_any.XAny()
+        model = bitmex_client.models.x_any.XAny()
 
 
 if __name__ == '__main__':

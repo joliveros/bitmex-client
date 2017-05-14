@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.apis.position_api import PositionApi
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.apis.position_api import PositionApi
 
 
 class TestPositionApi(unittest.TestCase):
     """ PositionApi unit test stubs """
 
     def setUp(self):
-        self.api = swagger_client.apis.position_api.PositionApi()
+        self.api = bitmex_client.apis.position_api.PositionApi()
 
     def tearDown(self):
         pass

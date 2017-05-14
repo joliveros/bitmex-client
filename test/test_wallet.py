@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.wallet import Wallet
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.wallet import Wallet
 
 
 class TestWallet(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestWallet(unittest.TestCase):
         """
         Test Wallet
         """
-        model = swagger_client.models.wallet.Wallet()
+        model = bitmex_client.models.wallet.Wallet()
 
 
 if __name__ == '__main__':

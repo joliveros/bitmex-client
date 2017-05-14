@@ -1,4 +1,4 @@
-# swagger_client.OrderBookApi
+# bitmex_client.OrderBookApi
 
 All URIs are relative to *https://localhost/api/v1*
 
@@ -17,12 +17,12 @@ Get current orderbook [deprecated, use /orderBook/L2].
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.OrderBookApi()
+api_instance = bitmex_client.OrderBookApi()
 symbol = 'symbol_example' # str | Instrument symbol. Send a series (e.g. XBT) to get data for the nearest contract in that series.
 depth = 25 # float | Orderbook depth. (optional) (default to 25)
 
@@ -65,12 +65,12 @@ Get current orderbook in vertical format.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.OrderBookApi()
+api_instance = bitmex_client.OrderBookApi()
 symbol = 'symbol_example' # str | Instrument symbol. Send a series (e.g. XBT) to get data for the nearest contract in that series.
 depth = 25 # float | Orderbook depth per side. Send 0 for full depth. (optional) (default to 25)
 

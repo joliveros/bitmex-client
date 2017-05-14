@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.affiliate import Affiliate
+import bitmex_client
+from bitmex_client.rest import ApiException
+from bitmex_client.models.affiliate import Affiliate
 
 
 class TestAffiliate(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestAffiliate(unittest.TestCase):
         """
         Test Affiliate
         """
-        model = swagger_client.models.affiliate.Affiliate()
+        model = bitmex_client.models.affiliate.Affiliate()
 
 
 if __name__ == '__main__':

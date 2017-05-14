@@ -1,4 +1,4 @@
-# swagger_client.NotificationApi
+# bitmex_client.NotificationApi
 
 All URIs are relative to *https://localhost/api/v1*
 
@@ -18,12 +18,12 @@ This is an upcoming feature and currently does not return data.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import bitmex_client
+from bitmex_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.NotificationApi()
+api_instance = bitmex_client.NotificationApi()
 
 try: 
     # Get your current notifications.

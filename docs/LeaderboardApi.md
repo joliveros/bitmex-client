@@ -14,7 +14,7 @@ Get current leaderboard.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException

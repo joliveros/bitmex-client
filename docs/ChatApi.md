@@ -17,7 +17,7 @@ Get chat messages.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException
@@ -69,7 +69,7 @@ Get available channels.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException
@@ -113,7 +113,7 @@ Returns an array with browser users in the first position and API users (bots) i
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException
@@ -155,14 +155,30 @@ Send a chat message.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apiKey
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: apiNonce
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-nonce'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-nonce'] = 'Bearer'
+# Configure API key authorization: apiSignature
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-signature'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-signature'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = bitmex_client.ChatApi()
+api_instance = bitmex_client.ChatApi(bitmex_client.ApiClient(configuration))
 message = 'message_example' # str | 
 channel_id = 1 # float | Channel to post to. Default 1 (English). (optional) (default to 1)
 
@@ -187,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../README.md#apiKey), [apiNonce](../README.md#apiNonce), [apiSignature](../README.md#apiSignature)
 
 ### HTTP request headers
 

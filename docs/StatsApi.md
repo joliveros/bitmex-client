@@ -15,7 +15,7 @@ Get exchange-wide and per-series turnover and volume statistics.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException
@@ -57,7 +57,7 @@ Get historical exchange-wide and per-series turnover and volume statistics.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException

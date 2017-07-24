@@ -20,14 +20,30 @@ See <a href=\"http://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_AP_6580.html\"
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apiKey
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: apiNonce
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-nonce'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-nonce'] = 'Bearer'
+# Configure API key authorization: apiSignature
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-signature'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-signature'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = bitmex_client.PositionApi()
+api_instance = bitmex_client.PositionApi(bitmex_client.ApiClient(configuration))
 filter = 'filter_example' # str | Table filter. For example, send {\"symbol\": \"XBTUSD\"}. (optional)
 columns = 'columns_example' # str | Which columns to fetch. For example, send [\"columnName\"]. (optional)
 count = 3.4 # float | Number of rows to fetch. (optional)
@@ -54,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../README.md#apiKey), [apiNonce](../README.md#apiNonce), [apiSignature](../README.md#apiSignature)
 
 ### HTTP request headers
 
@@ -72,14 +88,30 @@ Users can switch isolate margin per-position. This function allows switching mar
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apiKey
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: apiNonce
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-nonce'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-nonce'] = 'Bearer'
+# Configure API key authorization: apiSignature
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-signature'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-signature'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = bitmex_client.PositionApi()
+api_instance = bitmex_client.PositionApi(bitmex_client.ApiClient(configuration))
 symbol = 'symbol_example' # str | Position symbol to isolate.
 enabled = true # bool | True for isolated margin, false for cross margin. (optional) (default to true)
 
@@ -104,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../README.md#apiKey), [apiNonce](../README.md#apiNonce), [apiSignature](../README.md#apiSignature)
 
 ### HTTP request headers
 
@@ -122,14 +154,30 @@ When margin is isolated on a position, use this function to add or remove margin
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apiKey
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: apiNonce
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-nonce'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-nonce'] = 'Bearer'
+# Configure API key authorization: apiSignature
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-signature'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-signature'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = bitmex_client.PositionApi()
+api_instance = bitmex_client.PositionApi(bitmex_client.ApiClient(configuration))
 symbol = 'symbol_example' # str | Symbol of position to isolate.
 amount = 3.4 # float | Amount to transfer, in Satoshis. May be negative.
 
@@ -154,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../README.md#apiKey), [apiNonce](../README.md#apiNonce), [apiSignature](../README.md#apiSignature)
 
 ### HTTP request headers
 
@@ -172,14 +220,30 @@ Users can choose an isolated leverage. This will automatically enable isolated m
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apiKey
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: apiNonce
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-nonce'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-nonce'] = 'Bearer'
+# Configure API key authorization: apiSignature
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-signature'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-signature'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = bitmex_client.PositionApi()
+api_instance = bitmex_client.PositionApi(bitmex_client.ApiClient(configuration))
 symbol = 'symbol_example' # str | Symbol of position to adjust.
 leverage = 1.2 # float | Leverage value. Send a number between 0.01 and 100 to enable isolated margin with a fixed leverage. Send 0 to enable cross margin.
 
@@ -204,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../README.md#apiKey), [apiNonce](../README.md#apiNonce), [apiSignature](../README.md#apiSignature)
 
 ### HTTP request headers
 
@@ -222,14 +286,30 @@ Risk Limits limit the size of positions you can trade at various margin levels. 
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apiKey
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: apiNonce
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-nonce'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-nonce'] = 'Bearer'
+# Configure API key authorization: apiSignature
+configuration = bitmex_client.Configuration()
+configuration.api_key['api-signature'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-signature'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = bitmex_client.PositionApi()
+api_instance = bitmex_client.PositionApi(bitmex_client.ApiClient(configuration))
 symbol = 'symbol_example' # str | Symbol of position to isolate.
 risk_limit = 3.4 # float | New Risk Limit, in Satoshis.
 
@@ -254,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../README.md#apiKey), [apiNonce](../README.md#apiNonce), [apiSignature](../README.md#apiSignature)
 
 ### HTTP request headers
 

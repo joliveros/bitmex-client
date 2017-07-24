@@ -15,7 +15,7 @@ Get current orderbook [deprecated, use /orderBook/L2].
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException
@@ -63,7 +63,7 @@ Get current orderbook in vertical format.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException

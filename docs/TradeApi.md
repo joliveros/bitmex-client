@@ -17,7 +17,7 @@ Please note that indices (symbols starting with `.`) post trades at intervals to
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException
@@ -71,13 +71,13 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **trade_get_bucketed**
-> list[TradeBin] trade_get_bucketed(bin_size=bin_size, symbol=symbol, filter=filter, columns=columns, count=count, start=start, reverse=reverse, start_time=start_time, end_time=end_time)
+> list[TradeBin] trade_get_bucketed(bin_size=bin_size, partial=partial, symbol=symbol, filter=filter, columns=columns, count=count, start=start, reverse=reverse, start_time=start_time, end_time=end_time)
 
 Get previous trades in time buckets.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import bitmex_client
 from bitmex_client.rest import ApiException
@@ -85,7 +85,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = bitmex_client.TradeApi()
-bin_size = 'bin_size_example' # str | Time interval to bucket by. Available options: ['1m', '5m', '1h', '1d']. (optional)
+bin_size = '1m' # str | Time interval to bucket by. Available options: [1m,5m,1h,1d]. (optional) (default to 1m)
+partial = false # bool | If true, will send in-progress (incomplete) bins for the current time period. (optional) (default to false)
 symbol = 'symbol_example' # str | Instrument symbol. Send a bare series (e.g. XBU) to get data for the nearest expiring contract in that series.  You can also send a timeframe, e.g. `XBU:monthly`. Timeframes are `daily`, `weekly`, `monthly`, `quarterly`, and `biquarterly`. (optional)
 filter = 'filter_example' # str | Generic table filter. Send JSON key/value pairs, such as `{\"key\": \"value\"}`. You can key on individual fields, and do more advanced querying on timestamps. See the [Timestamp Docs](https://www.bitmex.com/app/restAPI#timestamp-filters) for more details. (optional)
 columns = 'columns_example' # str | Array of column names to fetch. If omitted, will return all columns.  Note that this method will always return item keys, even when not specified, so you may receive more columns that you expect. (optional)
@@ -97,7 +98,7 @@ end_time = '2013-10-20T19:20:30+01:00' # datetime | Ending date filter for resul
 
 try: 
     # Get previous trades in time buckets.
-    api_response = api_instance.trade_get_bucketed(bin_size=bin_size, symbol=symbol, filter=filter, columns=columns, count=count, start=start, reverse=reverse, start_time=start_time, end_time=end_time)
+    api_response = api_instance.trade_get_bucketed(bin_size=bin_size, partial=partial, symbol=symbol, filter=filter, columns=columns, count=count, start=start, reverse=reverse, start_time=start_time, end_time=end_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TradeApi->trade_get_bucketed: %s\n" % e)
@@ -107,7 +108,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bin_size** | **str**| Time interval to bucket by. Available options: [&#39;1m&#39;, &#39;5m&#39;, &#39;1h&#39;, &#39;1d&#39;]. | [optional] 
+ **bin_size** | **str**| Time interval to bucket by. Available options: [1m,5m,1h,1d]. | [optional] [default to 1m]
+ **partial** | **bool**| If true, will send in-progress (incomplete) bins for the current time period. | [optional] [default to false]
  **symbol** | **str**| Instrument symbol. Send a bare series (e.g. XBU) to get data for the nearest expiring contract in that series.  You can also send a timeframe, e.g. &#x60;XBU:monthly&#x60;. Timeframes are &#x60;daily&#x60;, &#x60;weekly&#x60;, &#x60;monthly&#x60;, &#x60;quarterly&#x60;, and &#x60;biquarterly&#x60;. | [optional] 
  **filter** | **str**| Generic table filter. Send JSON key/value pairs, such as &#x60;{\&quot;key\&quot;: \&quot;value\&quot;}&#x60;. You can key on individual fields, and do more advanced querying on timestamps. See the [Timestamp Docs](https://www.bitmex.com/app/restAPI#timestamp-filters) for more details. | [optional] 
  **columns** | **str**| Array of column names to fetch. If omitted, will return all columns.  Note that this method will always return item keys, even when not specified, so you may receive more columns that you expect. | [optional] 

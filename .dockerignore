@@ -1,3 +1,10 @@
+.cache
 __pycache__
-*.pyc
-.git
+build
+dist
+.coverage
+.env
+.test-env
+coverage.xml
+*.egg-info
+htmlcov

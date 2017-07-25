@@ -2,7 +2,7 @@
 """
     BitMEX API
 
-    ## REST API for the BitMEX Trading Platform  [View Changelog](/app/apiChangelog)  ----  #### Getting Started   ##### Fetching Data  All REST endpoints are documented below. You can try out any query right from this interface.  Most table queries accept `count`, `start`, and `reverse` params. Set `reverse=true` to get rows newest-first.  Additional documentation regarding filters, timestamps, and authentication is available in [the main API documentation](https://www.bitmex.com/app/restAPI).  *All* table data is available via the [Websocket](/app/wsAPI). We highly recommend using the socket if you want to have the quickest possible data without being subject to ratelimits.  ##### Return Types  By default, all data is returned as JSON. Send `?_format=csv` to get CSV data or `?_format=xml` to get XML data.  ##### Trade Data Queries  *This is only a small subset of what is available, to get you started.*  Fill in the parameters and click the `Try it out!` button to try any of these queries.  * [Pricing Data](#!/Quote/Quote_get)  * [Trade Data](#!/Trade/Trade_get)  * [OrderBook Data](#!/OrderBook/OrderBook_getL2)  * [Settlement Data](#!/Settlement/Settlement_get)  * [Exchange Statistics](#!/Stats/Stats_history)  Every function of the BitMEX.com platform is exposed here and documented. Many more functions are available.  ##### Swagger Specification  [⇩ Swagger JSON](swagger.json)  ----  ## All API Endpoints  Click to expand a section. 
+    ## REST API for the BitMEX Trading Platform  [View Changelog](/app/apiChangelog)  ----  #### Getting Started   ##### Fetching Data  All REST endpoints are documented below. You can try out any query right from this interface.  Most table queries accept `count`, `start`, and `reverse` params. Set `reverse=true` to get rows newest-first.  Additional documentation regarding filters, timestamps, and authentication is available in [the main API documentation](https://www.bitmex.com/app/restAPI).  *All* table data is available via the [Websocket](/app/wsAPI). We highly recommend using the socket if you want to have the quickest possible data without being subject to ratelimits.  ##### Return Types  By default, all data is returned as JSON. Send `?_format=csv` to get CSV data or `?_format=xml` to get XML data.  ##### Trade Data Queries  *This is only a small subset of what is available, to get you started.*  Fill in the parameters and click the `Try it out!` button to try any of these queries.  * [Pricing Data](#!/Quote/Quote_get)  * [Trade Data](#!/Trade/Trade_get)  * [OrderBook Data](#!/OrderBook/OrderBook_getL2)  * [Settlement Data](#!/Settlement/Settlement_get)  * [Exchange Statistics](#!/Stats/Stats_history)  Every function of the BitMEX.com platform is exposed here and documented. Many more functions are available.  ##### Swagger Specification  [⇩ Swagger JSON](swagger.json)  ----  ## All API Endpoints  Click to expand a section.
 
     OpenAPI spec version: 1.2.0
     Contact: support@bitmex.com
@@ -133,7 +133,12 @@ class ApiClient(object):
                                                     collection_formats)
 
         # auth setting
-        self.update_params_for_auth(header_params, query_params, auth_settings)
+        self.update_params_for_auth(method,
+                                    resource_path,
+                                    header_params,
+                                    query_params,
+                                    post_params,
+                                    auth_settings)
 
         # body
         if body:
@@ -149,6 +154,7 @@ class ApiClient(object):
                                      post_params=post_params, body=body,
                                      _preload_content=_preload_content,
                                      _request_timeout=_request_timeout)
+
 
         self.last_response = response_data
 
@@ -480,7 +486,7 @@ class ApiClient(object):
         else:
             return content_types[0]
 
-    def update_params_for_auth(self, headers, querys, auth_settings):
+    def update_params_for_auth(self, method, url, headers, post_params, auth_settings):
         """
         Updates header and query params based on authentication setting.
 
@@ -492,18 +498,9 @@ class ApiClient(object):
             return
 
         for auth in auth_settings:
-            auth_setting = self.configuration.auth_settings().get(auth)
-            if auth_setting:
-                if not auth_setting['value']:
-                    continue
-                elif auth_setting['in'] == 'header':
-                    headers[auth_setting['key']] = auth_setting['value']
-                elif auth_setting['in'] == 'query':
-                    querys.append((auth_setting['key'], auth_setting['value']))
-                else:
-                    raise ValueError(
-                        'Authentication token must be in `query` or `header`'
-                    )
+            auth_setting = self.configuration.auth_settings(method, url, post_params).get(auth)
+            headers[auth_setting['key']] = auth_setting['value']
+
 
     def __deserialize_file(self, response):
         """
@@ -613,6 +610,6 @@ class ApiClient(object):
                 value = data[klass.attribute_map[attr]]
                 kwargs[attr] = self.__deserialize(value, attr_type)
 
-        instance = klass(**kwargs)     
+        instance = klass(**kwargs)
 
         return instance

@@ -3,7 +3,7 @@
 """
     BitMEX API
 
-    ## REST API for the BitMEX Trading Platform  [View Changelog](/app/apiChangelog)  ----  #### Getting Started   ##### Fetching Data  All REST endpoints are documented below. You can try out any query right from this interface.  Most table queries accept `count`, `start`, and `reverse` params. Set `reverse=true` to get rows newest-first.  Additional documentation regarding filters, timestamps, and authentication is available in [the main API documentation](https://www.bitmex.com/app/restAPI).  *All* table data is available via the [Websocket](/app/wsAPI). We highly recommend using the socket if you want to have the quickest possible data without being subject to ratelimits.  ##### Return Types  By default, all data is returned as JSON. Send `?_format=csv` to get CSV data or `?_format=xml` to get XML data.  ##### Trade Data Queries  *This is only a small subset of what is available, to get you started.*  Fill in the parameters and click the `Try it out!` button to try any of these queries.  * [Pricing Data](#!/Quote/Quote_get)  * [Trade Data](#!/Trade/Trade_get)  * [OrderBook Data](#!/OrderBook/OrderBook_getL2)  * [Settlement Data](#!/Settlement/Settlement_get)  * [Exchange Statistics](#!/Stats/Stats_history)  Every function of the BitMEX.com platform is exposed here and documented. Many more functions are available.  ##### Swagger Specification  [⇩ Swagger JSON](swagger.json)  ----  ## All API Endpoints  Click to expand a section. 
+    ## REST API for the BitMEX Trading Platform  [View Changelog](/app/apiChangelog)  ----  #### Getting Started   ##### Fetching Data  All REST endpoints are documented below. You can try out any query right from this interface.  Most table queries accept `count`, `start`, and `reverse` params. Set `reverse=true` to get rows newest-first.  Additional documentation regarding filters, timestamps, and authentication is available in [the main API documentation](https://www.bitmex.com/app/restAPI).  *All* table data is available via the [Websocket](/app/wsAPI). We highly recommend using the socket if you want to have the quickest possible data without being subject to ratelimits.  ##### Return Types  By default, all data is returned as JSON. Send `?_format=csv` to get CSV data or `?_format=xml` to get XML data.  ##### Trade Data Queries  *This is only a small subset of what is available, to get you started.*  Fill in the parameters and click the `Try it out!` button to try any of these queries.  * [Pricing Data](#!/Quote/Quote_get)  * [Trade Data](#!/Trade/Trade_get)  * [OrderBook Data](#!/OrderBook/OrderBook_getL2)  * [Settlement Data](#!/Settlement/Settlement_get)  * [Exchange Statistics](#!/Stats/Stats_history)  Every function of the BitMEX.com platform is exposed here and documented. Many more functions are available.  ##### Swagger Specification  [⇩ Swagger JSON](swagger.json)  ----  ## All API Endpoints  Click to expand a section.
 
     OpenAPI spec version: 1.2.0
     Contact: support@bitmex.com
@@ -15,11 +15,15 @@ from __future__ import absolute_import
 
 import urllib3
 
-import sys
+import hashlib
+import hmac
 import logging
+import sys
 
 from six import iteritems
 from six.moves import http_client as httplib
+from six.moves.urllib.parse import urlencode
+from time import time
 
 
 class Configuration(object):
@@ -187,12 +191,27 @@ class Configuration(object):
         return urllib3.util.make_headers(basic_auth=self.username + ':' + self.password)\
                            .get('authorization')
 
-    def auth_settings(self):
+    def auth_settings(self, method, url, post_params):
         """
         Gets Auth Settings dict for api client.
 
         :return: The Auth Settings information dict.
         """
+        encoding = 'utf-8'
+
+        nonce = self.get_api_key_with_prefix('nonce')
+
+        if not nonce:
+            nonce = str(time())
+
+        post_params_dict = dict((x, y) for x, y in post_params)
+        encoded_params = urlencode(post_params_dict)
+        secret = bytes(self.get_api_key_with_prefix('api-secret'), encoding)
+        val = method + url + nonce + encoded_params
+        encoded_body= bytes(val, encoding)
+
+        signature = hmac.new(secret, msg=encoded_body, digestmod=hashlib.sha256).hexdigest()
+
         return {
             'apiKey':
                 {
@@ -206,16 +225,15 @@ class Configuration(object):
                     'type': 'api_key',
                     'in': 'header',
                     'key': 'api-nonce',
-                    'value': self.get_api_key_with_prefix('api-nonce')
+                    'value': nonce
                 },
             'apiSignature':
                 {
                     'type': 'api_key',
                     'in': 'header',
                     'key': 'api-signature',
-                    'value': self.get_api_key_with_prefix('api-signature')
+                    'value': signature
                 },
-
         }
 
     def to_debug_report(self):

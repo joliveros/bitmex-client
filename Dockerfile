@@ -1,6 +1,6 @@
-FROM codequants/bitmex-websocket:base
+FROM codequants/bitmex-client:base
 
-ENV MODULE_NAME bitmex-websocket
+ENV MODULE_NAME bitmex-client
 
 COPY . /src
 

@@ -191,26 +191,29 @@ class Configuration(object):
         return urllib3.util.make_headers(basic_auth=self.username + ':' + self.password)\
                            .get('authorization')
 
+    def gen_signature(self, method, url, post_params, nonce):
+        encoding = 'utf-8'
+
+        post_params = sorted(post_params, key=lambda tup: tup[1])
+        encoded_params = urlencode(post_params)
+        secret = bytes(self.get_api_key_with_prefix('api-secret'), encoding)
+        val = method + url + nonce + encoded_params
+        _val = 'POST/api/v1/order1429631577995price=219.0&orderQty=98&symbol=XBTM15&clOrdID=mm_bitmex_1a%2FoemUeQ4CAJZgP3fjHsA'
+        assert val == _val
+        encoded_body= bytes(val, encoding)
+
+        return hmac.new(secret, msg=encoded_body, digestmod=hashlib.sha256).hexdigest()
+
     def auth_settings(self, method, url, post_params):
         """
         Gets Auth Settings dict for api client.
 
         :return: The Auth Settings information dict.
         """
-        encoding = 'utf-8'
-
         nonce = self.get_api_key_with_prefix('nonce')
 
         if not nonce:
             nonce = str(time())
-
-        post_params_dict = dict((x, y) for x, y in post_params)
-        encoded_params = urlencode(post_params_dict)
-        secret = bytes(self.get_api_key_with_prefix('api-secret'), encoding)
-        val = method + url + nonce + encoded_params
-        encoded_body= bytes(val, encoding)
-
-        signature = hmac.new(secret, msg=encoded_body, digestmod=hashlib.sha256).hexdigest()
 
         return {
             'apiKey':
@@ -232,7 +235,7 @@ class Configuration(object):
                     'type': 'api_key',
                     'in': 'header',
                     'key': 'api-signature',
-                    'value': signature
+                    'value': self.gen_signature(method, url, post_params, nonce)
                 },
         }
 

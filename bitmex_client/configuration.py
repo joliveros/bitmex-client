@@ -200,7 +200,6 @@ class Configuration(object):
         secret = bytes(self.get_api_key_with_prefix('api-secret'), encoding)
         val = method + url + nonce + encoded_params
         _val = 'POST/api/v1/order1429631577995price=219.0&orderQty=98&symbol=XBTM15&clOrdID=mm_bitmex_1a%2FoemUeQ4CAJZgP3fjHsA'
-        assert val == _val
         encoded_body= bytes(val, encoding)
 
         return hmac.new(secret, msg=encoded_body, digestmod=hashlib.sha256).hexdigest()

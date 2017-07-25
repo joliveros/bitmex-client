@@ -213,7 +213,7 @@ class Configuration(object):
         nonce = self.get_api_key_with_prefix('nonce')
 
         if not nonce:
-            nonce = str(time())
+            nonce = str(time() * 1000)
 
         return {
             'apiKey':

@@ -194,6 +194,7 @@ class Configuration(object):
     def gen_signature(self, method, url, post_params, nonce):
         encoding = 'utf-8'
 
+        post_params = list(map(lambda pair: (pair[0], str(pair[1])), post_params))
         post_params = sorted(post_params, key=lambda tup: tup[1])
         encoded_params = urlencode(post_params)
         secret = bytes(self.get_api_key_with_prefix('api-secret'), encoding)

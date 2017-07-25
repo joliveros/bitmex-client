@@ -40,9 +40,9 @@ class TestApiClient(unittest.TestCase):
         path = '/api/v1/order'
         nonce = 1429631577995
         post_params = [('symbol', 'XBTM15'),
-                       ('price', '219.0'),
+                       ('price', 219.0),
                        ('clOrdID', 'mm_bitmex_1a/oemUeQ4CAJZgP3fjHsA'),
-                       ('orderQty', '98')]
+                       ('orderQty', 98)]
 
         headers = dict()
         config = Configuration()

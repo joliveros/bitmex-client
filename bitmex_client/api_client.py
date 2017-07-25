@@ -136,7 +136,6 @@ class ApiClient(object):
         self.update_params_for_auth(method,
                                     resource_path,
                                     header_params,
-                                    query_params,
                                     post_params,
                                     auth_settings)
 

@@ -34,7 +34,7 @@ class TestApiClient(unittest.TestCase):
     def testApiClient_update_params_for_auth(self):
         apiKey = 'LAqUlngMIQkIUjXMUreyu3qn'
         apiSecret = 'chNOOS4KvNXR_Xq4k4c9qsfoKWvnDecLATCRlcBwyKDYnWgO'
-        apiSignature = '6f447117479fc2c08dc9ca4c1c6001e5f0d1a95e20266038f9c66119d885a20f'
+        apiSignature = '65f9cfd2b86ed975f59331b26a79b84cab404fa603d09232604fce6275cbb98c'
         auth_settings = ['apiKey', 'apiNonce', 'apiSignature']
         method = 'POST'
         path = '/api/v1/order'

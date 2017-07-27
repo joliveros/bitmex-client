@@ -17,13 +17,15 @@ import urllib3
 
 import hashlib
 import hmac
+import json
 import logging
 import sys
 
 from six import iteritems
 from six.moves import http_client as httplib
-from six.moves.urllib.parse import urlencode
 from time import time
+
+
 
 
 class Configuration(object):
@@ -39,6 +41,7 @@ class Configuration(object):
         """
         # Default Base url
         self.host = "https://localhost/api/v1"
+        self.api_prefix = "/api/v1"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
@@ -194,15 +197,14 @@ class Configuration(object):
     def gen_signature(self, method, url, post_params, nonce):
         encoding = 'utf-8'
 
-        post_params = list(map(lambda pair: (pair[0], str(pair[1])), post_params))
-        post_params = sorted(post_params, key=lambda tup: tup[1])
-        encoded_params = urlencode(post_params)
         secret = bytes(self.get_api_key_with_prefix('api-secret'), encoding)
-        val = method + url + nonce + encoded_params
-        _val = 'POST/api/v1/order1429631577995price=219.0&orderQty=98&symbol=XBTM15&clOrdID=mm_bitmex_1a%2FoemUeQ4CAJZgP3fjHsA'
+        json_body = json.dumps(post_params)
+        val = method + url + nonce + json_body
         encoded_body= bytes(val, encoding)
 
-        return hmac.new(secret, msg=encoded_body, digestmod=hashlib.sha256).hexdigest()
+        sig = hmac.new(secret, msg=encoded_body, digestmod=hashlib.sha256).hexdigest()
+        print(sig)
+        return sig
 
     def auth_settings(self, method, url, post_params):
         """
@@ -211,9 +213,9 @@ class Configuration(object):
         :return: The Auth Settings information dict.
         """
         nonce = self.get_api_key_with_prefix('nonce')
-
+        url = self.api_prefix + url
         if not nonce:
-            nonce = str(time() * 1000)
+            nonce = str(int(round(time() * 1000)))
 
         return {
             'apiKey':

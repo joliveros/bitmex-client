@@ -131,6 +131,8 @@ class ApiClient(object):
             post_params = self.sanitize_for_serialization(post_params)
             post_params = self.parameters_to_tuples(post_params,
                                                     collection_formats)
+            post_params = list(map(lambda pair: (pair[0], str(pair[1])), post_params))
+            post_params = dict((x, y) for x, y in post_params)
 
         # auth setting
         self.update_params_for_auth(method,
@@ -496,8 +498,10 @@ class ApiClient(object):
         if not auth_settings:
             return
 
+        settings = self.configuration.auth_settings(method, url, post_params)
+
         for auth in auth_settings:
-            auth_setting = self.configuration.auth_settings(method, url, post_params).get(auth)
+            auth_setting = settings.get(auth)
             headers[auth_setting['key']] = auth_setting['value']
 
 

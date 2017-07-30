@@ -211,7 +211,6 @@ class Configuration(object):
 
         encoded_body= bytes(val, encoding)
         sig = hmac.new(secret, msg=encoded_body, digestmod=hashlib.sha256).hexdigest()
-        print(sig)
         return sig
 
     def auth_settings(self, method, url, query_params, post_params):

@@ -141,6 +141,7 @@ class ApiClient(object):
         self.update_params_for_auth(method,
                                     resource_path,
                                     header_params,
+                                    query_params,
                                     post_params,
                                     auth_settings)
 
@@ -490,7 +491,7 @@ class ApiClient(object):
         else:
             return content_types[0]
 
-    def update_params_for_auth(self, method, url, headers, post_params, auth_settings):
+    def update_params_for_auth(self, method, url, headers, query_params, post_params, auth_settings):
         """
         Updates header and query params based on authentication setting.
 
@@ -501,7 +502,7 @@ class ApiClient(object):
         if not auth_settings:
             return
 
-        settings = self.configuration.auth_settings(method, url, post_params)
+        settings = self.configuration.auth_settings(method, url, query_params, post_params)
 
         for auth in auth_settings:
             auth_setting = settings.get(auth)

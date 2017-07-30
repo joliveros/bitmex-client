@@ -19,6 +19,8 @@ import ssl
 import certifi
 import logging
 import re
+import alog
+import pdb
 
 # python 2 and python 3 compatibility library
 from six import PY3
@@ -174,6 +176,7 @@ class RESTClientObject(object):
                 # in serialized form
                 elif isinstance(body, str):
                     request_body = body
+
                     r = self.pool_manager.request(method, url,
                                                   body=request_body,
                                                   preload_content=_preload_content,

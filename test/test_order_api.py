@@ -16,8 +16,9 @@ from __future__ import absolute_import
 import os
 import sys
 import unittest
-
+import alog
 import bitmex_client
+
 from bitmex_client.rest import ApiException
 from bitmex_client.apis.order_api import OrderApi
 from bitmex_client import ApiClient
@@ -86,7 +87,20 @@ class TestOrderApi(unittest.TestCase):
 
         Get your orders.
         """
-        pass
+
+        config = bitmex_client.Configuration()
+        # prints http logs
+        # config.debug = True
+
+        config.api_key['api-key'] = os.environ.get('BITMEX_API_KEY')
+        config.api_key['api-secret'] = os.environ.get('BITMEX_API_SECRET')
+
+        config.host = 'https://testnet.bitmex.com/api/v1'
+        symbol = 'XBTUSD'
+
+        api = bitmex_client.OrderApi(ApiClient(config))
+        # result = api.order_get_orders(filter='{\"open\": true}')
+        #
 
     def test_order_new(self):
         """
@@ -94,7 +108,9 @@ class TestOrderApi(unittest.TestCase):
 
         Create a new order.
         """
+
         config = bitmex_client.Configuration()
+
         config.api_key['api-key'] = os.environ.get('BITMEX_API_KEY')
         config.api_key['api-secret'] = os.environ.get('BITMEX_API_SECRET')
 

@@ -20,8 +20,10 @@ import hmac
 import json
 import logging
 import sys
+import alog
 
 from six import iteritems
+from six.moves.urllib.parse import urlencode
 from six.moves import http_client as httplib
 from time import time
 
@@ -194,24 +196,25 @@ class Configuration(object):
         return urllib3.util.make_headers(basic_auth=self.username + ':' + self.password)\
                            .get('authorization')
 
-    def gen_signature(self, method, url, post_params, nonce):
+    def gen_signature(self, method, url, query_params, post_params, nonce):
         encoding = 'utf-8'
 
         secret = bytes(self.get_api_key_with_prefix('api-secret'), encoding)
 
         if method == 'GET':
+            if query_params:
+                url += '?' + urlencode(query_params)
             val = method + url + nonce
         else:
             json_body = json.dumps(post_params)
             val = method + url + nonce + json_body
 
         encoded_body= bytes(val, encoding)
-
         sig = hmac.new(secret, msg=encoded_body, digestmod=hashlib.sha256).hexdigest()
         print(sig)
         return sig
 
-    def auth_settings(self, method, url, post_params):
+    def auth_settings(self, method, url, query_params, post_params):
         """
         Gets Auth Settings dict for api client.
 
@@ -242,7 +245,7 @@ class Configuration(object):
                     'type': 'api_key',
                     'in': 'header',
                     'key': 'api-signature',
-                    'value': self.gen_signature(method, url, post_params, nonce)
+                    'value': self.gen_signature(method, url, query_params, post_params, nonce)
                 },
         }
 

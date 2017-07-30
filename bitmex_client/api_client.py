@@ -135,11 +135,17 @@ class ApiClient(object):
             post_params = dict((x, y) for x, y in post_params)
 
         # auth setting
-        self.update_params_for_auth(method,
-                                    resource_path,
-                                    header_params,
-                                    post_params,
-                                    auth_settings)
+        if method == 'GET':
+            data = query_params
+        else:
+            data = post_params
+
+        if data:
+            self.update_params_for_auth(method,
+                                        resource_path,
+                                        header_params,
+                                        data,
+                                        auth_settings)
 
         # body
         if body:

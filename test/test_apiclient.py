@@ -44,6 +44,8 @@ class TestApiClient(unittest.TestCase):
                        ('clOrdID', 'mm_bitmex_1a/oemUeQ4CAJZgP3fjHsA'),
                        ('orderQty', 98)]
 
+        query_params = {}
+
         headers = dict()
         config = Configuration()
         config.api_key['api-key'] = apiKey
@@ -54,6 +56,7 @@ class TestApiClient(unittest.TestCase):
         api.update_params_for_auth(method,
                                    path,
                                    headers,
+                                   query_params,
                                    post_params,
                                    auth_settings)
 

@@ -198,8 +198,13 @@ class Configuration(object):
         encoding = 'utf-8'
 
         secret = bytes(self.get_api_key_with_prefix('api-secret'), encoding)
-        json_body = json.dumps(post_params)
-        val = method + url + nonce + json_body
+
+        if method == 'GET':
+            val = method + url + nonce
+        else:
+            json_body = json.dumps(post_params)
+            val = method + url + nonce + json_body
+
         encoded_body= bytes(val, encoding)
 
         sig = hmac.new(secret, msg=encoded_body, digestmod=hashlib.sha256).hexdigest()

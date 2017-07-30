@@ -5,3 +5,4 @@ setuptools-markdown>=0.2
 six >= 1.10
 urllib3 >= 1.15.1
 semver
+alog
